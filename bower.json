@@ -1,0 +1,18 @@
+{
+  "name": "flattdesign",
+  "description": "Flatt Design Blog and Portfolio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor/bower_dl",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "datatables": "~1.10.10",
+    "datatables-plugins": "~1.10.10",
+    "font-awesome": "fontawesome#~4.5.0",
+    "jquery": "~2.1.4"
+  }
+}
