@@ -112,7 +112,7 @@ class TagController extends Controller
         }
         $tag->save();
 
-        return redirect("/admin/tag/$id/edit")
+        return redirect("/admin/tag")
             ->withSuccess("Changes saved successfully.");
     }
 

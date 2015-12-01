@@ -36,10 +36,11 @@ class UploadController extends Controller
         $folder = $request->get('folder').'/'.$new_folder;
 
         $result = $this->manager->createDirectory($folder);
-        if($result === true) {
-            return redirect()
-                ->back()
-                ->withSuccess("Folder '$new_folder' created.");
+
+        if ($result === true) {
+          return redirect()
+              ->back()
+              ->withSuccess("Folder '$new_folder' created.");
         }
 
         $error = $result ? : "An error occurred creating directory.";

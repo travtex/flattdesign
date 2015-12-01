@@ -139,12 +139,23 @@ class UploadsManager
 	{
 		$folder = $this->cleanFolder($folder);
 
+		if ($this->disk->exists($folder)) {
+		  return "Folder '$folder' aleady exists.";
+		}
+
+		return $this->disk->makeDirectory($folder);
+	}
+
+	public function deleteDirectory($folder)
+	{
+		$folder = $this->cleanFolder($folder);
+
 		$filesFolders = array_merge(
-			$this->disk->directories($folder),
-			$this->disk->files($folder)
+		  $this->disk->directories($folder),
+		  $this->disk->files($folder)
 		);
 		if (! empty($filesFolders)) {
-			return "Directory must be empty to delete it.";
+		  return "Directory must be empty to delete it.";
 		}
 
 		return $this->disk->deleteDirectory($folder);
