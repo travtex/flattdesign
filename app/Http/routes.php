@@ -17,6 +17,8 @@ Route::get('/', function() {
 
 get('blog', 'BlogController@index');
 get('blog/{slug}', 'BlogController@showPost');
+$router->get('contact', 'ContactController@showForm');
+Route::post('contact', 'ContactController@sendContactInfo');
 
 // Admin area
 get('admin', function() {
@@ -27,7 +29,7 @@ $router->group([
 	'namespace' => 'Admin',
 	'middleware' => 'auth',
 	], function() {
-		resource('admin/post', 'PostController');
+		resource('admin/post', 'PostController', ['except' => 'show']);
 		resource('admin/tag', 'TagController', ['except' => 'show']);
 		get('admin/upload', 'UploadController@index');
 		post('admin/upload/file', 'UploadController@uploadFile');
