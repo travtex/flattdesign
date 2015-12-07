@@ -7,9 +7,10 @@ return [
 	'author' => 'Travis Flatt',
 	'page_image' => 'home-bg.jpg',
 	'posts_per_page' => 8,
+	'rss_size' => 25,
 	'uploads' => [
 		'storage' => 's3',
 		'webpath' => 'https://s3-us-west-2.amazonaws.com/flattdesign/blog/img'
 	],
-	'contact_email' => 'tcf.webdev@gmail.com',
+	'contact_email' => env('MAIL_FROM'),
 ];

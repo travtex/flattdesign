@@ -20,6 +20,10 @@ get('blog/{slug}', 'BlogController@showPost');
 $router->get('contact', 'ContactController@showForm');
 Route::post('contact', 'ContactController@sendContactInfo');
 
+//RSS
+get('rss', 'BlogController@rss');
+get('sitemap.xml', 'BlogController@siteMap');
+
 // Admin area
 get('admin', function() {
 	return redirect('admin/post');
